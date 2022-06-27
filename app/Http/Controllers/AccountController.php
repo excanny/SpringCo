@@ -139,7 +139,7 @@ class AccountController extends Controller
         return response()->json($accountswithzerocustomers);
     }
 
-    public function getcustomerswithzerobalance()
+    public function getaccountswithzerobalance()
     {
         $users = [];
 

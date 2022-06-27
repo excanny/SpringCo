@@ -28,6 +28,6 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('accounts/getaccounttypecustomers/{account_type}', [AccountController::class, 'getaccounttypecustomers']);
     Route::get('accounts/getaccountsofcustomer/{user_id}', [AccountController::class, 'getaccountsofcustomer']);
     Route::get('accounts/getaccounttypeswithzerocustomers', [AccountController::class, 'getaccounttypeswithzerocustomers']);
-    Route::get('accounts/getcustomerswithzerobalance', [AccountController::class, 'getcustomerswithzerobalance']);
+    Route::get('accounts/getaccountswithzerobalance', [AccountController::class, 'getaccountswithzerobalance']);
 });
 
