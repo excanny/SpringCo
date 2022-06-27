@@ -19,10 +19,11 @@ After the JWT is generated upon a successful login, use "Authorization : 'genera
 | HTTP Verb    | Route          | Action | Used For    | Request | Expected Response/Action |
 | :---:         |     :---:      |         :---: | :---: |  :---: | :---: |
 | POST   | '/api/register'     | register action    | route to create a new user account   | {"first_name": "string", "first_name": "string", "email" : "string","password" : "string"} | {"status": true,"message": "User created successfully" |
-| POST | '/api/login'      | login action     |route to login    |{"email" : "string","password" : "string"}    | Generates an JWT authentication token and call other endpoints   /api/accounts'     | create account action    | creates one account   |{"account_type": "number"} |{ "status": true, "message": "Twit created successfully"} |
-| PUT | '/api/accounts/fund/{account_number}'     | funds a account    | account funding   |None | { "deposit_amount": "number"} |
-| PUT | '/api/accounts/withdraw/{account_number}'     | withdraws from an account    | account withdrawal   | { "withdraw_amount": "number"} |
-| GET | '/api/accounts/getinterest/{account_number}' | gets accrued interest on account     |interest calculation    |  |
-| POST   | '/create/twit/like'     | create like action    | adds like to a twit   | {"twit_id": "string"}    | { "status": true, "message": "Twit liked successfully"}    |
-| POST    | '/delete/twit'      | delete twit action     | deletes a twit if created by user    |{"id": "string"}    |{ "status": true, "message": "Twit deleted successfully"}    |
-
+| POST | '/api/login'      | login action     |route to login    |{"email" : "string","password" : "string"}    | Generates an JWT authentication token and call other endpoints   /api/accounts'     | create account action    | creates one account   |{"account_type": "number"} |{ "status": true, "message": "Account created successfully"} |
+| PUT | '/api/accounts/fund/{account_number}'     | funds a account    | account funding   |{ "deposit_amount": "number"} | { "status": true, "message": "Account funded successfully"} |
+| PUT | '/api/accounts/withdraw/{account_number}'     | withdraws from an account    | account withdrawal   | { "withdraw_amount": "number"} | { "status": true, "message": "Account withdrawn successfully"}|
+| GET | '/api/accounts/getinterest/{account_number}' | gets accrued interest on account     |interest calculation    | None | {"status":true,"message":"Account accrued: 3499.3"}|
+| GET   | '/api/accounts/getaccounttypecustomers/{account_type_id}'     | get customers under the account type    | get customers under the account type   | None    | [A list of customers]    |
+| GET | '/api/accounts/getaccountsofcustomer/{user_id}' | get accounts of a customer     | get accounts of a customer    | None  | [A list of the customer's accounts]  |
+| GET | '/api/accounts/getaccounttypeswithzerocustomers' | get account types with zero customers | retrieves any account type thats has no customers    | None  | [A list of the account types with no customers]  |
+| GET | 'api/accounts/getaccountswithzerobalance' | gets accounts with zero balance    | retrieves accounts with zero balance   | None  | [A list of the accounts with zero balance]  |
