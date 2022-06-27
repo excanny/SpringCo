@@ -26,4 +26,4 @@ After the JWT is generated upon a successful login, use "Authorization : 'Bearer
 | GET   | '/api/accounts/getaccounttypecustomers/{account_type_id}'     | account type customers retrieval action   | get customers under the account type   | None    | [A list of customers]    |
 | GET | '/api/accounts/getaccountsofcustomer/{user_id}' | customer's accounts retrieval action | get accounts of a customer    | None  | [A list of the customer's accounts]  |
 | GET | '/api/accounts/getaccounttypeswithzerocustomers' | account types with zero customers retrieval action | gets any account type thats has no customers    | None  | [A list of the account types with no customers]  |
-| GET | 'api/accounts/getaccountswithzerobalance' | accounts with zero balance retrieval    | get accounts with zero balance   | None  | [A list of the accounts with zero balance]  |
+| GET | 'api/accounts/getaccountswithzerobalance' | accounts with zero balance retrieval action | get accounts with zero balance   | None  | [A list of the accounts with zero balance]  |
